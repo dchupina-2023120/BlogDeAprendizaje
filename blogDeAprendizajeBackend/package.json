@@ -1,0 +1,32 @@
+{
+  "name": "blog-aprendizaje-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "seed": "node data/seed.js"
+  },
+  "keywords": [
+    "blog",
+    "aprendizaje"
+  ],
+  "author": "JC (Joel Chávez)",
+  "license": "MIT",
+  "description": "Blog de Aprendizaje",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.0",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.1.0",
+    "mongoose": "^8.15.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
