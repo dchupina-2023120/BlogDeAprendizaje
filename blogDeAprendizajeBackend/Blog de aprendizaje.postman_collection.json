@@ -1,0 +1,242 @@
+{
+	"info": {
+		"_postman_id": "6a5389dd-fb04-4b43-b970-cf082af789d4",
+		"name": "Blog de aprendizaje",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37956994"
+	},
+	"item": [
+		{
+			"name": "Publicaciones",
+			"item": [
+				{
+					"name": "Listar publicaciones",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener publicaciones Taller",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/posts?course=Taller",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"posts"
+							],
+							"query": [
+								{
+									"key": "course",
+									"value": "Taller"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener publicaciones Tecnologia",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/posts?course=Tecnología",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"posts"
+							],
+							"query": [
+								{
+									"key": "course",
+									"value": "Tecnología"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener publicaciones Practica",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/posts?course=Práctica Supervisada",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"posts"
+							],
+							"query": [
+								{
+									"key": "course",
+									"value": "Práctica Supervisada"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener publicacion id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/posts/682ad13d71b4e38fabe60524",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"posts",
+								"682ad13d71b4e38fabe60524"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Publicacion",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Ejemplo de Tarea para Recordar Regar las Plantas Inteligentemente\",\r\n  \"content\": \"Este proyecto consiste en desarrollar un sistema que me recuerde cuándo regar las plantas dependiendo del clima y del tipo de planta.\",\r\n  \"course\": \"Práctica Supervisada\",\r\n  \"createdAt\": \"15/11/2025\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comentarios",
+			"item": [
+				{
+					"name": "Crear comentario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"postId\": \"682ad37171b4e38fabe60539\",\r\n  \"name\": \"CoderGaláctico3000\",\r\n  \"text\": \"¡Este proyecto está fuera de este mundo! 🚀🔥 Ojalá pueda aprender a hacer cosas tan geniales como esta.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/comments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener comentarios",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"postId\": \"682ad37171b4e38fabe60539\",\r\n  \"name\": \"CoderGaláctico3000\",\r\n  \"text\": \"¡Este proyecto está fuera de este mundo! 🚀🔥 Ojalá pueda aprender a hacer cosas tan geniales como esta.\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/comments?postId=682ad37171b4e38fabe60539",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"comments"
+							],
+							"query": [
+								{
+									"key": "postId",
+									"value": "682ad37171b4e38fabe60539"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
